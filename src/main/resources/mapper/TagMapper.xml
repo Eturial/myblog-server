@@ -10,7 +10,7 @@
     </resultMap>
 
     <select id="getAllTag" resultMap="BaseResultMap">
-        select tag_name
+        select tag_id, tag_name
         from tag;
     </select>
 </mapper>

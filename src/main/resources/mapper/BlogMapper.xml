@@ -18,4 +18,34 @@
             <result property="tagId" column="tag_id"/>
     </resultMap>
 
+    <insert id="addArticle" parameterType="blog">
+        insert into blog(title, description, content, first_picture, tag_id)
+        values (#{blog.title}, #{blog.description}, #{blog.content}, #{blog.firstPicture}, #{blog.tagId});
+    </insert>
+    <update id="updateArticle" parameterType="blog">
+        update blog
+        set title = #{blog.title},
+            description = #{blog.description},
+            content = #{blog.content},
+            first_picture = #{blog.firstPicture},
+            tag_id = #{blog.tagId}
+        where blog_id = #{blog.blogId};
+    </update>
+    <delete id="deleteArticle" parameterType="java.lang.Long">
+        delete
+        from blog
+        where blog_id = #{id};
+    </delete>
+
+    <select id="getAllBlog" resultMap="BaseResultMap">
+        select *
+        from blog;
+    </select>
+
+    <select id="getTagBlog" resultMap="BaseResultMap">
+        select *
+        from blog
+        where #{id} = tag_id;
+    </select>
+
 </mapper>

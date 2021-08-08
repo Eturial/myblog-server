@@ -1,6 +1,8 @@
 package com.eturial.blog.server.pojo;
 
 import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 /**
@@ -32,6 +34,7 @@ public class Blog {
     /**
      * 创建时间
      */
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone="GMT+8")
     private Date createTime;
 
     /**
