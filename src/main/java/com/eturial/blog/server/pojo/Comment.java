@@ -9,16 +9,16 @@ import lombok.Data;
  * @TableName comment
  */
 @Data
-public class Comment implements Serializable {
+public class Comment {
     /**
-     * 
+     * id
      */
     private Long commentId;
 
     /**
-     * 
+     * 用户昵称
      */
-    private Long uid;
+    private String nickname;
 
     /**
      * 评论内容
@@ -31,14 +31,13 @@ public class Comment implements Serializable {
     private Date createTime;
 
     /**
-     * 
+     * 博客id
      */
     private Long blogId;
 
     /**
-     * 
+     * 上级评论id
      */
     private Long parentCommentId;
 
-    private static final long serialVersionUID = 1L;
 }

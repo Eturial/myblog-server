@@ -1,6 +1,5 @@
 package com.eturial.blog.server.pojo;
 
-import java.io.Serializable;
 import lombok.Data;
 
 /**
@@ -8,16 +7,14 @@ import lombok.Data;
  * @TableName tag
  */
 @Data
-public class Tag implements Serializable {
+public class Tag {
     /**
-     * 
+     * id
      */
     private Long tagId;
 
     /**
-     * 
+     * 标签名
      */
     private String tagName;
-
-    private static final long serialVersionUID = 1L;
 }

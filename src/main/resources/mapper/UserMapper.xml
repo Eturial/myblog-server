@@ -6,17 +6,12 @@
 
     <resultMap id="BaseResultMap" type="com.eturial.blog.server.pojo.User">
             <id property="uid" column="uid" jdbcType="BIGINT"/>
-            <result property="nickname" column="nickname" jdbcType="VARCHAR"/>
-            <result property="gender" column="gender" jdbcType="VARCHAR"/>
-            <result property="username" column="username" jdbcType="VARCHAR"/>
-            <result property="password" column="password" jdbcType="VARCHAR"/>
-            <result property="email" column="email" jdbcType="VARCHAR"/>
-            <result property="avatar" column="avatar" jdbcType="VARCHAR"/>
+            <result property="nickname" column="nickname"/>
+            <result property="gender" column="gender"/>
+            <result property="username" column="username"/>
+            <result property="password" column="password"/>
+            <result property="email" column="email"/>
+            <result property="avatar" column="avatar"/>
     </resultMap>
 
-    <sql id="Base_Column_List">
-        uid,nickname,gender,
-        username,password,email,
-        avatar
-    </sql>
 </mapper>

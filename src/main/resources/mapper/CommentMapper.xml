@@ -5,16 +5,12 @@
 <mapper namespace="com.eturial.blog.server.mapper.CommentMapper">
 
     <resultMap id="BaseResultMap" type="com.eturial.blog.server.pojo.Comment">
-            <id property="commentId" column="comment_id" jdbcType="BIGINT"/>
-            <result property="uid" column="uid" jdbcType="BIGINT"/>
-            <result property="content" column="content" jdbcType="VARCHAR"/>
-            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
-            <result property="blogId" column="blog_id" jdbcType="BIGINT"/>
-            <result property="parentCommentId" column="parent_comment_id" jdbcType="BIGINT"/>
+            <id property="commentId" column="comment_id"/>
+            <result property="nickname" column="nickname"/>
+            <result property="content" column="content"/>
+            <result property="createTime" column="create_time"/>
+            <result property="blogId" column="blog_id"/>
+            <result property="parentCommentId" column="parent_comment_id"/>
     </resultMap>
 
-    <sql id="Base_Column_List">
-        comment_id,uid,content,
-        create_time,blog_id,parent_comment_id
-    </sql>
 </mapper>

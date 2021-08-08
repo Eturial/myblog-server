@@ -5,11 +5,12 @@
 <mapper namespace="com.eturial.blog.server.mapper.TagMapper">
 
     <resultMap id="BaseResultMap" type="com.eturial.blog.server.pojo.Tag">
-            <id property="tagId" column="tag_id" jdbcType="BIGINT"/>
-            <result property="tagName" column="tag_name" jdbcType="VARCHAR"/>
+            <id property="tagId" column="tag_id"/>
+            <result property="tagName" column="tag_name"/>
     </resultMap>
 
-    <sql id="Base_Column_List">
-        tag_id,tag_name
-    </sql>
+    <select id="getAllTag" resultMap="BaseResultMap">
+        select tag_name
+        from tag;
+    </select>
 </mapper>

@@ -6,7 +6,6 @@
     <typeAliases>
         <typeAlias alias="Blog" type="com.eturial.blog.server.pojo.Blog"/>
         <typeAlias alias="Comment" type="com.eturial.blog.server.pojo.Comment"/>
-        <typeAlias alias="Friends" type="com.eturial.blog.server.pojo.Friends"/>
         <typeAlias alias="Message" type="com.eturial.blog.server.pojo.Message"/>
         <typeAlias alias="Reward" type="com.eturial.blog.server.pojo.Reward"/>
         <typeAlias alias="Tag" type="com.eturial.blog.server.pojo.Tag"/>
@@ -27,7 +26,6 @@
     <mappers>
         <mapper resource="mapper/BlogMapper.xml"/>
         <mapper resource="mapper/CommentMapper.xml"/>
-        <mapper resource="mapper/FriendsMapper.xml"/>
         <mapper resource="mapper/MessageMapper.xml"/>
         <mapper resource="mapper/RewardMapper.xml"/>
         <mapper resource="mapper/TagMapper.xml"/>

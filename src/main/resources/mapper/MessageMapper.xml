@@ -5,15 +5,11 @@
 <mapper namespace="com.eturial.blog.server.mapper.MessageMapper">
 
     <resultMap id="BaseResultMap" type="com.eturial.blog.server.pojo.Message">
-            <id property="messageId" column="message_id" jdbcType="BIGINT"/>
-            <result property="uid" column="uid" jdbcType="BIGINT"/>
-            <result property="content" column="content" jdbcType="VARCHAR"/>
-            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
-            <result property="parentMessageId" column="parent_message_id" jdbcType="BIGINT"/>
+            <id property="messageId" column="message_id"/>
+            <result property="nickname" column="nickname"/>
+            <result property="content" column="content"/>
+            <result property="createTime" column="create_time"/>
+            <result property="parentMessageId" column="parent_message_id"/>
     </resultMap>
 
-    <sql id="Base_Column_List">
-        message_id,uid,content,
-        create_time,parent_message_id
-    </sql>
 </mapper>

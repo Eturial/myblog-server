@@ -5,23 +5,17 @@
 <mapper namespace="com.eturial.blog.server.mapper.BlogMapper">
 
     <resultMap id="BaseResultMap" type="com.eturial.blog.server.pojo.Blog">
-            <id property="blogId" column="blog_id" jdbcType="BIGINT"/>
-            <result property="title" column="title" jdbcType="VARCHAR"/>
-            <result property="description" column="description" jdbcType="VARCHAR"/>
-            <result property="content" column="content" jdbcType="VARCHAR"/>
-            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
-            <result property="firstPicture" column="first_picture" jdbcType="VARCHAR"/>
-            <result property="thumbs" column="thumbs" jdbcType="INTEGER"/>
-            <result property="views" column="views" jdbcType="INTEGER"/>
-            <result property="comment" column="comment" jdbcType="INTEGER"/>
-            <result property="collection" column="collection" jdbcType="INTEGER"/>
-            <result property="tagId" column="tag_id" jdbcType="BIGINT"/>
+            <id property="blogId" column="blog_id"/>
+            <result property="title" column="title"/>
+            <result property="description" column="description"/>
+            <result property="content" column="content"/>
+            <result property="createTime" column="create_time"/>
+            <result property="firstPicture" column="first_picture"/>
+            <result property="thumbs" column="thumbs"/>
+            <result property="views" column="views"/>
+            <result property="comment" column="comment"/>
+            <result property="collection" column="collection"/>
+            <result property="tagId" column="tag_id"/>
     </resultMap>
 
-    <sql id="Base_Column_List">
-        blog_id,title,description,
-        content,create_time,first_picture,
-        thumbs,views,comment,
-        collection,tag_id
-    </sql>
 </mapper>

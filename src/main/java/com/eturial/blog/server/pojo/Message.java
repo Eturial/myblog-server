@@ -9,16 +9,16 @@ import lombok.Data;
  * @TableName message
  */
 @Data
-public class Message implements Serializable {
+public class Message {
     /**
-     * 
+     * id
      */
     private Long messageId;
 
     /**
-     * 
+     * 用户昵称
      */
-    private Long uid;
+    private String nickname;
 
     /**
      * 留言内容
@@ -31,9 +31,8 @@ public class Message implements Serializable {
     private Date createTime;
 
     /**
-     * 
+     * 上级留言id
      */
     private Long parentMessageId;
 
-    private static final long serialVersionUID = 1L;
 }
