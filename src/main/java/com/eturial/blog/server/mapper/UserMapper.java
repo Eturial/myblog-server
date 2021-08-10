@@ -20,4 +20,10 @@ public interface UserMapper {
     User getUserByUsername(@RequestParam("username") String username);
 
     List<User> getAllUser();
+
+    void updateUser(@RequestParam("user") User user);
+
+    void updateAvatar(@RequestParam("user") User user);
+
+     User getUserByEmail(@RequestParam("email")String email);
 }

@@ -5,7 +5,7 @@
 <mapper namespace="com.eturial.blog.server.mapper.UserMapper">
 
     <resultMap id="BaseResultMap" type="com.eturial.blog.server.pojo.User">
-            <id property="uid" column="uid" jdbcType="BIGINT"/>
+            <id property="uid" column="uid"/>
             <result property="nickname" column="nickname"/>
             <result property="gender" column="gender"/>
             <result property="username" column="username"/>
@@ -13,6 +13,24 @@
             <result property="email" column="email"/>
             <result property="avatar" column="avatar"/>
     </resultMap>
+
+    <update id="updateUser" parameterType="user">
+        update user
+        set
+            nickname = #{unickname},
+            gender = #{gender},
+            username = #{username},
+            password = #{password},
+            email = #{email}
+        where
+              uid = #{uid};
+    </update>
+
+    <update id="updateAvatar" parameterType="user">
+        update user
+        set avatar = #{avatar}
+        where username = #{username};
+    </update>
 
     <select id="getUserById" resultType="com.eturial.blog.server.pojo.LoginUser" parameterType="java.lang.Long">
         select uid, username, password
@@ -34,6 +52,12 @@
     <select id="getAllUser" resultMap="BaseResultMap">
         select *
         from user;
+    </select>
+
+    <select id="getUserByEmail" resultType="com.eturial.blog.server.pojo.User">
+        select *
+        from user
+        where email = #{email};
     </select>
 
 </mapper>
