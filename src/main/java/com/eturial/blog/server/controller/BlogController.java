@@ -32,7 +32,7 @@ public class BlogController {
         return blogService.getTagBlog(id);
     }
 
-    @PostMapping(value = "addArticle")
+    @PostMapping(value = "/addArticle")
     @ResponseBody
     // 添加新文章
     public void addArticle( @RequestParam("blogStr") String blogStr,
@@ -51,14 +51,14 @@ public class BlogController {
         blogService.addArticle(blog, file);
     }
 
-    @PostMapping(value = "deleteArticle")
+    @PostMapping(value = "/deleteArticle")
     @ResponseBody
     // 删除文章
     public void deleteArticle( @RequestParam("id") Long id) {
         blogService.deleteArticle(id);
     }
 
-    @PostMapping(value = "updateArticle")
+    @PostMapping(value = "/updateArticle")
     @ResponseBody
     // 修改文章
     public void updateArticle( @RequestParam("blogStr") String blogStr,

@@ -1,7 +1,11 @@
 package com.eturial.blog.server.mapper;
 
+import com.eturial.blog.server.pojo.LoginUser;
 import com.eturial.blog.server.pojo.User;
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
 
 /**
 * @Entity com.eturial.blog.server.pojo.User
@@ -9,5 +13,11 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface UserMapper {
 
+    LoginUser getUserById(@RequestParam("id") long id);
 
+    LoginUser findByUsername(@RequestParam("username") String username);
+
+    User getUserByUsername(@RequestParam("username") String username);
+
+    List<User> getAllUser();
 }

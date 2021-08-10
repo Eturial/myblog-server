@@ -14,4 +14,26 @@
             <result property="avatar" column="avatar"/>
     </resultMap>
 
+    <select id="getUserById" resultType="com.eturial.blog.server.pojo.LoginUser" parameterType="java.lang.Long">
+        select uid, username, password
+        from user
+        where uid = #{id};
+    </select>
+    <select id="findByUsername" resultType="com.eturial.blog.server.pojo.LoginUser">
+        select uid,username,password
+        from user
+        where username = #{username};
+    </select>
+
+    <select id="getUserByUsername" resultType="com.eturial.blog.server.pojo.User">
+        select *
+        from user
+        where username = #{username};
+    </select>
+
+    <select id="getAllUser" resultMap="BaseResultMap">
+        select *
+        from user;
+    </select>
+
 </mapper>
