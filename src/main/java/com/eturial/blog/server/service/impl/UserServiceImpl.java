@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 
 /**
 *
@@ -65,5 +66,10 @@ public class UserServiceImpl implements UserService {
             return -1;
 
         return SendMail.sendMail(user.getEmail());
+    }
+
+    @Override
+    public void register(User user) {
+        userMapper.addNewUser(user);
     }
 }

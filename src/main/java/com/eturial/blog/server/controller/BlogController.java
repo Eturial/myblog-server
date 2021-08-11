@@ -76,4 +76,25 @@ public class BlogController {
 
         blogService.updateArticle(blog, file);
     }
+
+    @PostMapping(value = "/updateThumb")
+    @ResponseBody
+    // 点赞
+    public void updateThumb(@RequestParam("id") Long id) {
+        blogService.updateThumb(id);
+    }
+
+    @PostMapping(value = "/updateCollection")
+    @ResponseBody
+    // 收藏
+    public void updateCollection(@RequestParam("id") Long id) {
+        blogService.updateCollection(id);
+    }
+
+    @PostMapping(value = "/updateView")
+    @ResponseBody
+    // 浏览
+    public void updateView(@RequestParam("id") Long id) {
+        blogService.updateView(id);
+    }
 }

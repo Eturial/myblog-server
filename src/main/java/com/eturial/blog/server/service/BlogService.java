@@ -19,4 +19,10 @@ public interface BlogService {
     void deleteArticle(Long id);
 
     void updateArticle(Blog blog, MultipartFile file);
+
+    void updateThumb(Long id);
+
+    void updateCollection(Long id);
+
+    void updateView(Long id);
 }

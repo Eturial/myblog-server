@@ -20,4 +20,6 @@ public interface UserService {
     void updateAvatar(MultipartFile file, String username);
 
     int verify(User user);
+
+    void register(User user);
 }

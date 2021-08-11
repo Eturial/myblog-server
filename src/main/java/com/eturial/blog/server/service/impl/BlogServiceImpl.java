@@ -62,4 +62,19 @@ public class BlogServiceImpl implements BlogService{
         }
         blogMapper.updateArticle(blog);
     }
+
+    @Override
+    public void updateThumb(Long id) {
+        blogMapper.updateThumb(id);
+    }
+
+    @Override
+    public void updateCollection(Long id) {
+        blogMapper.updateCollection(id);
+    }
+
+    @Override
+    public void updateView(Long id) {
+        blogMapper.updateView(id);
+    }
 }

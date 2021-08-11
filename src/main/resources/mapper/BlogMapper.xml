@@ -31,6 +31,22 @@
             tag_id = #{blog.tagId}
         where blog_id = #{blog.blogId};
     </update>
+
+    <update id="updateThumb" parameterType="java.lang.Long">
+        update blog
+        set thumbs = thumbs + 1;
+    </update>
+
+    <update id="updateCollection">
+        update blog
+        set collection = collection + 1;
+    </update>
+
+    <update id="updateView">
+        update blog
+        set views = views + 1;
+    </update>
+
     <delete id="deleteArticle" parameterType="java.lang.Long">
         delete
         from blog

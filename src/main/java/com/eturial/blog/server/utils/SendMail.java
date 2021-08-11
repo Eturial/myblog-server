@@ -31,7 +31,7 @@ public class SendMail {
             Session session = Session.getDefaultInstance(properties, new Authenticator() {
                 @Override
                 protected PasswordAuthentication getPasswordAuthentication() {
-                    return new PasswordAuthentication("1220405381@qq.com","13753309889yh");
+                    return new PasswordAuthentication("1220405381@qq.com","jkxoyulevivcfgid");
                 }
             });
 
@@ -42,7 +42,7 @@ public class SendMail {
             Transport transport = session.getTransport();
 
             //连接服务器
-            transport.connect("smtp.qq.com","2563609671@qq.com","13753309889yh");
+            transport.connect("smtp.qq.com","1220405381@qq.com","jkxoyulevivcfgid");
 
             //创建邮件对象
             MimeMessage mimeMessage = new MimeMessage(session);
@@ -56,7 +56,7 @@ public class SendMail {
             mimeMessage.setRecipient(Message.RecipientType.TO,new InternetAddress(mailBox));
 
             //邮件标题
-            mimeMessage.setSubject("欢迎注册Eturial's blog");
+            mimeMessage.setSubject("欢迎注册Eturial的blog");
 
             int random = (int)((Math.random()) * 1000000);
             //邮件内容

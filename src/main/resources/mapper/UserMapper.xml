@@ -14,22 +14,27 @@
             <result property="avatar" column="avatar"/>
     </resultMap>
 
+    <insert id="addNewUser">
+        insert into user(username, password, email)
+        values (#{user.username}, #{user.password}, #{user.email});
+    </insert>
+
     <update id="updateUser" parameterType="user">
         update user
         set
-            nickname = #{unickname},
-            gender = #{gender},
-            username = #{username},
-            password = #{password},
-            email = #{email}
+            nickname = #{user.unickname},
+            gender = #{user.gender},
+            username = #{user.username},
+            password = #{user.password},
+            email = #{user.email}
         where
-              uid = #{uid};
+              uid = #{user.uid};
     </update>
 
     <update id="updateAvatar" parameterType="user">
         update user
-        set avatar = #{avatar}
-        where username = #{username};
+        set avatar = #{user.avatar}
+        where username = #{user.username};
     </update>
 
     <select id="getUserById" resultType="com.eturial.blog.server.pojo.LoginUser" parameterType="java.lang.Long">
