@@ -14,7 +14,6 @@
             <result property="thumbs" column="thumbs"/>
             <result property="views" column="views"/>
             <result property="comment" column="comment"/>
-            <result property="collection" column="collection"/>
             <result property="tagId" column="tag_id"/>
     </resultMap>
 
@@ -35,11 +34,6 @@
     <update id="updateThumb" parameterType="java.lang.Long">
         update blog
         set thumbs = thumbs + 1;
-    </update>
-
-    <update id="updateCollection">
-        update blog
-        set collection = collection + 1;
     </update>
 
     <update id="updateView">

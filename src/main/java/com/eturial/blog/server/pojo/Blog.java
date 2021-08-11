@@ -58,11 +58,6 @@ public class Blog {
     private Integer comment;
 
     /**
-     * 收藏数
-     */
-    private Integer collection;
-
-    /**
      * 标签id
      */
     private Long tagId;

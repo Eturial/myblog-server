@@ -24,7 +24,7 @@ public interface BlogMapper{
 
     void updateThumb(@Param("id") Long id);
 
-    void updateCollection(@Param("id") Long id);
+//    void updateCollection(@Param("id") Long id);
 
     void updateView(@Param("id") Long id);
 }

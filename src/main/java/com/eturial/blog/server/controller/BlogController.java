@@ -84,12 +84,12 @@ public class BlogController {
         blogService.updateThumb(id);
     }
 
-    @PostMapping(value = "/updateCollection")
-    @ResponseBody
-    // 收藏
-    public void updateCollection(@RequestParam("id") Long id) {
-        blogService.updateCollection(id);
-    }
+//    @PostMapping(value = "/updateCollection")
+//    @ResponseBody
+//    // 收藏
+//    public void updateCollection(@RequestParam("id") Long id) {
+//        blogService.updateCollection(id);
+//    }
 
     @PostMapping(value = "/updateView")
     @ResponseBody

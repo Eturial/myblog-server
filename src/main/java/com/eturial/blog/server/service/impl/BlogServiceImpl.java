@@ -68,10 +68,10 @@ public class BlogServiceImpl implements BlogService{
         blogMapper.updateThumb(id);
     }
 
-    @Override
-    public void updateCollection(Long id) {
-        blogMapper.updateCollection(id);
-    }
+//    @Override
+//    public void updateCollection(Long id) {
+//        blogMapper.updateCollection(id);
+//    }
 
     @Override
     public void updateView(Long id) {

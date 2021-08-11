@@ -22,7 +22,7 @@ public interface BlogService {
 
     void updateThumb(Long id);
 
-    void updateCollection(Long id);
+//    void updateCollection(Long id);
 
     void updateView(Long id);
 }
