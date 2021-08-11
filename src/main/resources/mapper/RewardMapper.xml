@@ -11,12 +11,12 @@
     </resultMap>
 
     <insert id="addReward" parameterType="reward">
-        insert into reward(nickname,time)
-        values(#{reward.nickname},#{reward.time});
+        insert into reward(nickname, time, meney)
+        values(#{reward.nickname}, #{reward.time}, #{reward.money});
     </insert>
 
     <select id="getAllReward" resultMap="BaseResultMap">
-        select nickname,time
+        select nickname, time, money
         from reward;
     </select>
 

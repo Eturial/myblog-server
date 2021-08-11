@@ -25,4 +25,6 @@ public interface BlogService {
 //    void updateCollection(Long id);
 
     void updateView(Long id);
+
+    void updateComment(Long id);
 }

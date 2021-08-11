@@ -12,4 +12,26 @@
             <result property="parentMessageId" column="parent_message_id"/>
     </resultMap>
 
+    <insert id="addMessage" parameterType="message">
+        insert into message(nickname, content, parent_message_id)
+        values (#{message.nickname}, #{message.content}, #{message.parentMessageId});
+    </insert>
+
+    <delete id="deleteOne" parameterType="Long">
+        delete
+        from message
+        where message_id = #{id};
+    </delete>
+
+    <select id="getOneById" resultType="com.eturial.blog.server.pojo.Message">
+        select *
+        from message
+        where message_id = #{id};
+    </select>
+
+    <select id="getAllMessage" resultMap="BaseResultMap">
+        select *
+        from message;
+    </select>
+
 </mapper>

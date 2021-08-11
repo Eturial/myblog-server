@@ -32,6 +32,7 @@ public class RewardController {
         Reward reward = new Reward();
         reward.setNickname(object.getString("nickname"));
         reward.setTime(object.getDate("time"));
+        reward.setMoney(object.getInteger("money"));
 
         rewardService.addReward(reward);
     }

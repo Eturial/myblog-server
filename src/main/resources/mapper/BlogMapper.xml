@@ -41,6 +41,11 @@
         set views = views + 1;
     </update>
 
+    <update id="updateComment">
+        update blog
+        set comment = comment + 1;
+    </update>
+
     <delete id="deleteArticle" parameterType="java.lang.Long">
         delete
         from blog

@@ -13,4 +13,26 @@
             <result property="parentCommentId" column="parent_comment_id"/>
     </resultMap>
 
+    <insert id="addComment">
+        insert into comment(nickname, content, blog_id, parent_comment_id)
+        values (#{comment.nickname}, #{comment.content}, #{comment.blogId}, #{comment.parentCommentId});
+    </insert>
+
+    <delete id="deleteOne">
+        delete
+        from comment
+        where comment_id = #{id};
+    </delete>
+
+    <select id="getOneById" resultMap="BaseResultMap">
+        select *
+        from comment
+        where comment_id = #{id};
+    </select>
+
+    <select id="getAllComment" resultMap="BaseResultMap">
+        select *
+        from comment;
+    </select>
+
 </mapper>

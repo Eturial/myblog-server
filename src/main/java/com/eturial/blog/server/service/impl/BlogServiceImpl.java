@@ -77,4 +77,9 @@ public class BlogServiceImpl implements BlogService{
     public void updateView(Long id) {
         blogMapper.updateView(id);
     }
+
+    @Override
+    public void updateComment(Long id) {
+        blogMapper.updateComment(id);
+    }
 }
