@@ -17,6 +17,12 @@ public class TagServiceImpl implements TagService {
     TagMapper tagMapper;
 
     @Override
+    public Tag getTagById(Long id) {
+        System.out.println(tagMapper.getTagById(id));
+        return tagMapper.getTagById(id);
+    }
+
+    @Override
     public List<Tag> getAllTag() {
         return tagMapper.getAllTag();
     }

@@ -61,4 +61,6 @@ public class Blog {
      * 标签id
      */
     private Long tagId;
+
+    private String tagName;
 }

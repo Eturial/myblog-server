@@ -26,5 +26,9 @@ public interface BlogService {
 
     void updateView(Long id);
 
-    void updateComment(Long id);
+//    void updateComment(Long id);
+
+    List<Blog> getMostViews();
+
+    Blog getBlogById(Long id);
 }

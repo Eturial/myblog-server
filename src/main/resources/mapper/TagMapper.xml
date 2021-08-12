@@ -13,4 +13,10 @@
         select tag_id, tag_name
         from tag;
     </select>
+
+    <select id="getTagById" resultMap="BaseResultMap">
+        select *
+        from tag
+        where tag_id = #{id};
+    </select>
 </mapper>

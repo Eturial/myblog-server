@@ -29,4 +29,8 @@ public interface BlogMapper{
     void updateView(@Param("id") Long id);
 
     void updateComment(@Param("id") Long id);
+
+    List<Blog> getMostViews();
+
+    Blog getBlogById(@Param("id") Long id);
 }

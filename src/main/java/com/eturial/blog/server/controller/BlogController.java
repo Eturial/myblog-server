@@ -24,6 +24,13 @@ public class BlogController {
         return blogService.getAllBlog();
     }
 
+    @GetMapping(value = "/getOneBlog")
+    @ResponseBody
+    // 查看一篇博客
+    public Blog getBLogById(@RequestParam("id") Long id) {
+        return blogService.getBlogById(id);
+    }
+
     @GetMapping(value = "/getTagBlog")
     @ResponseBody
     // 归档中查看博客
@@ -96,5 +103,11 @@ public class BlogController {
     // 浏览
     public void updateView(@RequestParam("id") Long id) {
         blogService.updateView(id);
+    }
+
+    @GetMapping(value = "mostViews")
+    @ResponseBody
+    public List<Blog> mostViews() {
+        return blogService.getMostViews();
     }
 }

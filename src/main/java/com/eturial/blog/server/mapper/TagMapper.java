@@ -2,6 +2,7 @@ package com.eturial.blog.server.mapper;
 
 import com.eturial.blog.server.pojo.Tag;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -12,4 +13,6 @@ import java.util.List;
 public interface TagMapper {
 
     List<Tag> getAllTag();
+
+    Tag getTagById(@Param("id") Long id);
 }

@@ -63,4 +63,16 @@
         where #{id} = tag_id;
     </select>
 
+    <select id="getMostViews" resultMap="BaseResultMap">
+        select title, views
+        from blog
+        order by views desc;
+    </select>
+
+    <select id="getBlogById" resultMap="BaseResultMap">
+        select *
+        from blog
+        where blog_id = #{id};
+    </select>
+
 </mapper>

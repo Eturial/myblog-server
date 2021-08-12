@@ -19,7 +19,7 @@ public class RewardController {
 
     @GetMapping(value = "/getAllReward")
     @ResponseBody
-    @UserLoginToken
+//    @UserLoginToken
     // 查看赞赏记录
     public List<Reward> getAllReward() {
         return rewardService.getAllReward();
