@@ -90,9 +90,11 @@ public class BlogServiceImpl implements BlogService{
 
     @Override
     public void updateArticle(Blog blog, MultipartFile file) {
+
         SavePicture savePicture = new SavePicture();
 
         String url = blog.getFirstPicture();
+
         int begin = url.indexOf("images");
         int length = url.length();
         String filePath = "F:/" + url.substring(begin, length);
@@ -104,6 +106,16 @@ public class BlogServiceImpl implements BlogService{
             e.printStackTrace();
         }
         blogMapper.updateArticle(blog);
+
+        List<Blog> list = blogMapper.getAllBlog();
+        String blogListData = null;
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            blogListData = objectMapper.writeValueAsString(list);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        redisTemplate.boundValueOps("blog.getAllBlog").set(blogListData);
     }
 
     @Override
