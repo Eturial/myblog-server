@@ -50,7 +50,15 @@ public class BlogServiceImpl implements BlogService{
 
     @Override
     public List<Blog> getTagBlog(Long id) {
-        return blogMapper.getTagBlog(id);
+        List<Blog> list = blogMapper.getTagBlog(id);
+        for(int i = 0; i < list.size();i++){
+            Blog blog = list.get(i);
+            Long tagId = blog.getTagId();
+            Tag tag = tagMapper.getTagById(tagId);
+            blog.setTagName(tag.getTagName());
+            list.set(i,blog);
+        }
+        return list;
     }
 
     @Override

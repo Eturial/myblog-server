@@ -64,7 +64,7 @@
     </select>
 
     <select id="getMostViews" resultMap="BaseResultMap">
-        select title, views
+        select blog_id, title, views
         from blog
         order by views desc;
     </select>

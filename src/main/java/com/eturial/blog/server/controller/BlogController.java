@@ -34,9 +34,10 @@ public class BlogController {
     @GetMapping(value = "/getTagBlog")
     @ResponseBody
     // 归档中查看博客
-    public List<Blog> getTagBLog(@RequestParam("id") Long id) {
+    public List<Blog> getTagBLog(@RequestParam("id") String id) {
+
 //        System.out.println(id);
-        return blogService.getTagBlog(id);
+        return blogService.getTagBlog(Long.parseLong(id));
     }
 
     @PostMapping(value = "/addArticle")
