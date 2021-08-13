@@ -54,7 +54,8 @@
 
     <select id="getAllBlog" resultMap="BaseResultMap">
         select *
-        from blog;
+        from blog
+        order by create_time desc;
     </select>
 
     <select id="getTagBlog" resultMap="BaseResultMap">

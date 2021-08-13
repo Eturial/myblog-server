@@ -6,7 +6,10 @@ import com.eturial.blog.server.pojo.Tag;
 import com.eturial.blog.server.service.BlogService;
 import com.eturial.blog.server.mapper.BlogMapper;
 import com.eturial.blog.server.utils.SavePicture;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -24,6 +27,9 @@ public class BlogServiceImpl implements BlogService{
     @Autowired
     TagMapper tagMapper;
 
+    @Autowired
+    private RedisTemplate<String, String> redisTemplate;
+
     @Override
     public void addArticle(Blog blog, MultipartFile file) {
         SavePicture savePicture = new SavePicture();
@@ -36,16 +42,32 @@ public class BlogServiceImpl implements BlogService{
     }
 
     @Override
-    public List<Blog> getAllBlog() {
-        List<Blog> list = blogMapper.getAllBlog();
-        for(int i = 0; i < list.size();i++){
-            Blog blog = list.get(i);
-            Long tagId = blog.getTagId();
-            Tag tag = tagMapper.getTagById(tagId);
-            blog.setTagName(tag.getTagName());
-            list.set(i,blog);
+    public String getAllBlog() {
+        String blogListData = redisTemplate.boundValueOps("blog.getAllBlog").get();
+        if (null == blogListData) {
+
+            List<Blog> list = blogMapper.getAllBlog();
+            for(int i = 0; i < list.size();i++){
+                Blog blog = list.get(i);
+                Long tagId = blog.getTagId();
+                Tag tag = tagMapper.getTagById(tagId);
+                blog.setTagName(tag.getTagName());
+                list.set(i,blog);
+            }
+
+            //转换成json格式字符串
+            ObjectMapper objectMapper = new ObjectMapper();
+            try {
+                blogListData = objectMapper.writeValueAsString(list);
+            } catch (JsonProcessingException e) {
+                e.printStackTrace();
+            }
+
+            //将数据存储到redis中
+            redisTemplate.boundValueOps("blog.getAllBlog").set(blogListData);
         }
-        return list;
+
+        return blogListData;
     }
 
     @Override

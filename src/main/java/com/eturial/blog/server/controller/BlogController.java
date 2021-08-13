@@ -20,7 +20,7 @@ public class BlogController {
     @GetMapping(value = "/getAllBlog")
     @ResponseBody
     // 查看所有博客
-    public List<Blog> getAllBLog() {
+    public String getAllBLog() {
         return blogService.getAllBlog();
     }
 
